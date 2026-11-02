@@ -3,37 +3,42 @@ syntax "Markdown" "\.(md|mkd|mkdn|markdown|mdx|mdown)$"
 # Tables (Github extension)
 color cyan ".*[ :]\|[ :].*"
 
+# headlines
+color bold,white,blue "^#{1,6} .*"
+color bold,white,sea "^#{2,6} .*"
+color bold,white,cyan "^#{3,6} .*"
+color bold,sea "^#{4,6} .*"
+color bold,cyan "^#{5,6} .*"
+color bold,blue "^#{6,6} .*"
+
 # quotes
-color brightblack  start="^>" end="^$"
-color brightblack  "^>.*"
+color pink  start="^>" end="^$"
+color pink  "^>.*"
 
 # Emphasis
-color green "(^|[[:space:]])(_[^ ][^_]*_|\*[^ ][^*]*\*)"
+color italic,green "(^|[[:space:]])(_[^ ][^_]*_|\*[^ ][^*]*\*)"
 
 # Strong emphasis
-color brightgreen "(^|[[:space:]])(__[^ ][^_]*__|\*\*[^ ][^*]*\*\*)"
+color bold,lime "(^|[[:space:]])(__[^ ][^_]*__|\*\*[^ ][^*]*\*\*)"
 
 # strike-through
 color red "(^|[[:space:]])~~[^ ][^~]*~~"
 
 # horizontal rules
-color brightmagenta "^(---+|===+|___+|\*\*\*+)\s*$"
-
-# headlines
-color brightwhite "^#{1,6} .*"
+color slate "^(---+|===+|___+|\*\*\*+)\s*$"
 
 # lists
-color brightblue   "^[[:space:]]*[\*+-] |^[[:space:]]*[0-9]+\. "
+color magenta "^[[:space:]]*[\*+-] |^[[:space:]]*[0-9]+\. "
 
 # leading whitespace
-color black    "^[[:space:]]+"
+color gray "^[[:space:]]+"
 
 # misc
-color magenta   "\(([CcRr]|[Tt][Mm])\)" "\.{3}" "(^|[[:space:]])\-\-($|[[:space:]])"
+color white "\(([CcRr]|[Tt][Mm])\)" "\.{3}" "(^|[[:space:]])\-\-($|[[:space:]])"
 
 # links
-color brightblue "\[[^]]+\]"
-color brightblue "\[([^][]|\[[^]]*\])*\]\([^)]+\)"
+color red "\[[^]]+\]"
+color cyan "\[([^][]|\[[^]]*\])*\]\([^)]+\)"
 
 # images
 color magenta "!\[[^][]*\](\([^)]+\)|\[[^]]+\])"
@@ -42,10 +47,10 @@ color magenta "!\[[^][]*\](\([^)]+\)|\[[^]]+\])"
 color brightyellow "https?://[^ )>]+"
 
 # code
-color yellow   "`[^`]*`|^ {4}[^-+*].*"
+color pink   "`[^`]*`|^ {4}[^-+*].*"
 # code blocks
-color yellow start="^```[^$]" end="^```$"
-color yellow "^```$"
+color pink start="^```[^$]" end="^```$"
+color pink "^```$"
 
 ## Trailing spaces
 color ,green "[[:space:]]+$"
